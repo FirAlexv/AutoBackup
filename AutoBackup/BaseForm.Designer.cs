@@ -46,7 +46,7 @@
             this.button_OK.TabIndex = 13;
             this.button_OK.Text = "OK";
             this.button_OK.UseVisualStyleBackColor = true;
-            this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
+            this.button_OK.Click += new System.EventHandler(this.Button_OK_Click);
             // 
             // button_Path_Backup
             // 
@@ -56,7 +56,7 @@
             this.button_Path_Backup.TabIndex = 12;
             this.button_Path_Backup.Text = "...";
             this.button_Path_Backup.UseVisualStyleBackColor = true;
-            this.button_Path_Backup.Click += new System.EventHandler(this.button_Path_Backup_Click);
+            this.button_Path_Backup.Click += new System.EventHandler(this.Button_Path_Backup_Click);
             // 
             // textBox_Path_Backup
             // 
@@ -82,7 +82,7 @@
             this.button_Path_Source.TabIndex = 9;
             this.button_Path_Source.Text = "...";
             this.button_Path_Source.UseVisualStyleBackColor = true;
-            this.button_Path_Source.Click += new System.EventHandler(this.button_Path_Source_Click);
+            this.button_Path_Source.Click += new System.EventHandler(this.Button_Path_Source_Click);
             // 
             // textBox_Path_Source
             // 
