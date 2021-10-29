@@ -63,15 +63,26 @@ namespace AutoBackup
             string[] fileCollectSource = Directory.GetFiles(settings.Path_Source);
             string[] fileCollectBackup = Directory.GetFiles(settings.Path_Backup);
 
-            foreach (var file in fileCollectSource)
+            for (int i = 0; i < fileCollectSource.Length; i++)
             {
-                if (true)
-                {
+                FileInfo fileSource = new FileInfo(fileCollectSource[i]);
+                FileInfo fileBackup;
 
+                if (fileCollectBackup.Length!=0)//Пустота резерва
+                {
+                    fileBackup = new FileInfo(fileCollectBackup[i]);
+
+                    if (fileSource.LastWriteTime > fileBackup.LastWriteTime)
+                    {
+                        fileSource.CopyTo(fileBackup.FullName, true);
+                    }
+                }
+                else
+                {
+                    fileSource.CopyTo(settings.Path_Backup+"\\"+fileSource.Name, true);
                 }
             }
-            //FileInfo fileSource= new FileInfo(settings.Path_Source);
-            //todo Доделать
+            //todo Доделать пробег по папкам
         }
     }
 }
