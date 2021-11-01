@@ -16,7 +16,6 @@ namespace AutoBackup
     {
         Settings settings = new Settings();
 
-
         public BaseForm()
         {
             InitializeComponent();
@@ -32,10 +31,11 @@ namespace AutoBackup
                 }
                 else
                 {
-                    settings.Path_Source = textBox_Path_Source.Text;
+                    Settings.Default.Path_Source = textBox_Path_Source.Text;
 
-                    settings.Path_Backup = textBox_Path_Backup.Text;
+                    Settings.Default.Path_Backup = textBox_Path_Backup.Text;
 
+                    Settings.Default.Save();
                     MyAutoBackup(settings.Path_Source, settings.Path_Backup);
                 }
             }
@@ -45,7 +45,7 @@ namespace AutoBackup
 
                 textBox_Path_Backup.Text = settings.Path_Backup;
 
-                MyAutoBackup(settings.Path_Source, settings.Path_Backup);
+                MyAutoBackup(textBox_Path_Source.Text, textBox_Path_Backup.Text);
             }            
         }
 
@@ -65,8 +65,8 @@ namespace AutoBackup
 
         private void MyAutoBackup(string path_Source, string path_Backup)
         {
-            string[] fileCollectSource = Directory.GetFiles(settings.Path_Source);
-            string[] fileCollectBackup = Directory.GetFiles(settings.Path_Backup);
+            string[] fileCollectSource = Directory.GetFiles(path_Source);
+            string[] fileCollectBackup = Directory.GetFiles(path_Backup);
 
             for (int i = 0; i < fileCollectSource.Length; i++)
             {
