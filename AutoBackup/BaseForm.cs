@@ -16,8 +16,6 @@ namespace AutoBackup
     {
         Settings settings = new Settings();
 
-        //todo НЕ нужные переменные?
-        string Path_Source = "", Path_Backup = "";
 
         public BaseForm()
         {
@@ -26,21 +24,29 @@ namespace AutoBackup
 
         private void Button_OK_Click(object sender, EventArgs e)
         {
-            if (textBox_Path_Source.Text == "" && textBox_Path_Backup.Text == "")
+            if (settings.Path_Source == "" && settings.Path_Backup == "")
             {
-                //todo Ошибка путей
-                settings.Path_Source = Path_Source;
+                if (textBox_Path_Source.Text == "" && textBox_Path_Backup.Text == "")
+                {
+                    MessageBox.Show("Пути пусты!");
+                }
+                else
+                {
+                    settings.Path_Source = textBox_Path_Source.Text;
 
-                settings.Path_Backup = Path_Backup;
+                    settings.Path_Backup = textBox_Path_Backup.Text;
+
+                    MyAutoBackup(settings.Path_Source, settings.Path_Backup);
+                }
             }
             else
             {
-                settings.Path_Source = textBox_Path_Source.Text;
+                textBox_Path_Source.Text = settings.Path_Source;
 
-                settings.Path_Backup = textBox_Path_Backup.Text;
-            }
+                textBox_Path_Backup.Text = settings.Path_Backup;
 
-            MyAutoBackup(settings.Path_Source, settings.Path_Backup);
+                MyAutoBackup(settings.Path_Source, settings.Path_Backup);
+            }            
         }
 
         private void Button_Path_Source_Click(object sender, EventArgs e)
@@ -55,7 +61,6 @@ namespace AutoBackup
             folderBrowserDialog.ShowDialog();
 
             textBox_Path_Backup.Text = folderBrowserDialog.SelectedPath;
-
         }
 
         private void MyAutoBackup(string path_Source, string path_Backup)
