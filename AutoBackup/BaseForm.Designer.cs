@@ -36,6 +36,8 @@
             this.textBox_Path_Source = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label_CopyFile_Count = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_OK
@@ -50,7 +52,7 @@
             // 
             // button_Path_Backup
             // 
-            this.button_Path_Backup.Location = new System.Drawing.Point(366, 110);
+            this.button_Path_Backup.Location = new System.Drawing.Point(366, 74);
             this.button_Path_Backup.Name = "button_Path_Backup";
             this.button_Path_Backup.Size = new System.Drawing.Size(27, 23);
             this.button_Path_Backup.TabIndex = 12;
@@ -60,7 +62,7 @@
             // 
             // textBox_Path_Backup
             // 
-            this.textBox_Path_Backup.Location = new System.Drawing.Point(110, 112);
+            this.textBox_Path_Backup.Location = new System.Drawing.Point(110, 76);
             this.textBox_Path_Backup.Name = "textBox_Path_Backup";
             this.textBox_Path_Backup.Size = new System.Drawing.Size(250, 20);
             this.textBox_Path_Backup.TabIndex = 11;
@@ -68,7 +70,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 115);
+            this.label2.Location = new System.Drawing.Point(25, 79);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 10;
@@ -95,16 +98,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Руть ичтоника";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(192, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Количество скопированных файлов:";
+            // 
+            // label_CopyFile_Count
+            // 
+            this.label_CopyFile_Count.AutoSize = true;
+            this.label_CopyFile_Count.Location = new System.Drawing.Point(220, 117);
+            this.label_CopyFile_Count.Name = "label_CopyFile_Count";
+            this.label_CopyFile_Count.Size = new System.Drawing.Size(13, 13);
+            this.label_CopyFile_Count.TabIndex = 15;
+            this.label_CopyFile_Count.Text = "0";
             // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 219);
+            this.Controls.Add(this.label_CopyFile_Count);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button_OK);
             this.Controls.Add(this.button_Path_Backup);
             this.Controls.Add(this.textBox_Path_Backup);
@@ -128,6 +152,8 @@
         private System.Windows.Forms.TextBox textBox_Path_Source;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_CopyFile_Count;
     }
 }
 

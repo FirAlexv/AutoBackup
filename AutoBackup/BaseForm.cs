@@ -65,6 +65,9 @@ namespace AutoBackup
 
         private void MyAutoBackup(string path_Source, string path_Backup)
         {
+            string[] directCollectSource = Directory.GetDirectories(path_Source);
+            string[] directCollectBackup = Directory.GetDirectories(path_Backup);
+
             string[] fileCollectSource = Directory.GetFiles(path_Source);
             string[] fileCollectBackup = Directory.GetFiles(path_Backup);
 
@@ -86,7 +89,7 @@ namespace AutoBackup
                 {
                     fileSource.CopyTo(settings.Path_Backup+"\\"+fileSource.Name, true);
                 }
-            }
+            }//FileWork
             //todo Доделать пробег по папкам
         }
     }
